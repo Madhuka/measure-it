@@ -1,9 +1,14 @@
 # measure-it server
 
-First run 
-'npm install'
+Installing dependences 
+```
+npm install
+```
 
 Start server by running
-'npm start'
+```
+npm start
+```
 
-Server is start on port 3000
+Server is started on port 3000
+[http://localhost:3000/](http://localhost:3000/)
