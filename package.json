@@ -1,0 +1,17 @@
+{
+  "name": "measure-it-services-api",
+  "description": "This measure-it service APIs",
+  "repository": "-",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "dependencies": {
+    "express": "~4.12.2",
+    "body-parser": "^1.14.2",
+    "multer": "1.1.0",
+    "jquery": "^2.2.1",
+    "font-awesome": "^4.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}

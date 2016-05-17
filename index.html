@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <title>Measure It</title>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Measure It</a>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <div class="col-lg-12">
+       <div class="jumbotron" style="padding:40px;">
+             <h1>Measure It</h1>
+             <p>....</p>
+         </div>
+    </div>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <form id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
+          <input type="file" name="photo" multiple />
+          <input type="submit" value="Upload Image" name="submit">
+          <input type='text' id='random' name='random'><br>
+          <span id="status"></span>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script>
+    <!-- TO-DO : inline script move app.js-->
+    $(document).ready(function() {
+      $('#uploadForm').submit(function() {
+        $("#status").empty().text("File is uploading...");
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status('Error: ' + xhr.status);
+          },
+          success: function(response) {
+            console.log(response)
+            $("#status").empty().text(response);
+          }
+        });
+        return false;
+      });
+    });
+  </script>
+
+</body>
+
+</html>
